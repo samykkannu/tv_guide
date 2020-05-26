@@ -248,6 +248,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.1)
   sass-rails (>= 6)
   selenium-webdriver
+  sidekiq
   sidekiq-scheduler
   spring
   spring-watcher-listen (~> 2.0.0)

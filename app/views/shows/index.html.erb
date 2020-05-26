@@ -1,5 +1,18 @@
-<div>
-<%@shows.each do|show|%>
-<%=show.name%>
+<%= form_tag(shows_path, method: :get) do%>
+  <%=text_field_tag :q, params[:q]%>
+  <%=submit_tag('search')%>
 <%end%>
-</div>
+<table style="width:100%">
+  <tr>
+    <th>Channel</th>
+    <th>Show</th>
+    <th>make fav</th>
+  </tr>
+  <%@shows.each do|show|%>
+    <tr>
+      <td><%=show.channel.name%></td>
+      <td><%=show.name%></td>
+      <td><%=link_to('fav', mark_fav_show_path(show), method: :post)%></td>
+    </tr>
+  <%end%>
+</table>
